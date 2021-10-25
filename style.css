@@ -99,14 +99,14 @@ p {
 
 /* Navbar */
 #navbar {
-  position: fixed;
+  position: relative;
   display: flex;
   justify-content: space-between;
   width: 100%;
   background-color: #212529;
   color: var(--color-white);
   align-items: center;
-  padding: 16px;
+  padding: 0px;
   z-index: 1;
 }
 
@@ -116,7 +116,7 @@ p {
 
 .navbar__logo > img {
   width: 300px;
-  height: 80px;
+  height: 60px;
   object-fit: cover;
 }
 
@@ -145,4 +145,41 @@ p {
   font-size: 24px;
   color: white;
   display: none;
+}
+
+
+/* Home */
+#home {
+  padding: 40px;
+  padding-top: 120px;
+  text-align: center;
+  background-image: url("imgs/home__background.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.home__title {
+  color: var(--color-white);
+  font-size: var(--font-medium);
+  font-weight: 350;
+}
+
+.home__description {
+  color: var(--color-white);
+  font-size: 60px;
+}
+
+.home__contact {
+  color: var(--color-white);
+  font-size: var(--font-regular);
+  font-weight: var(--weight-bold);
+  margin: 24px;
+  padding: 8px 12px;
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover {
+  background-color: var(--color-light-grey);
 }
