@@ -30,12 +30,12 @@
       <li class="navbar__menu__item">CONTACT</li>
     </ul>
 
-  <!-- Toggle Button -->
-  <button class="navbar__togle-btn">
-    <i class="fas fa-bars ms-1"></i>
-  </button>
+    <!-- Toggle Button -->
+    <button class="navbar__togle-btn">
+      <i class="fas fa-bars ms-1"></i>
+    </button>
   </nav>
-  
+
   <!-- Home -->
   <section id="home">
     <div class="hemo__container">
@@ -44,6 +44,40 @@
       <button class="home__contact">CONTACT ME</button>
     </div>
   </section>
+
+  <!-- Service -->
+  <section id="service" class="section">
+    <div class="section__container">
+
+      <form method="post" enctype="multipart/form-data">
+        <div class="service__content">
+          <label for="chooseFile">
+            👉 이미지를 선택하세요 👈
+            <div class="service__Drag-Drop">또는 이미지 파일을 여기로 끌어 놓으세요</div>
+          </label>
+        </div>
+        <input type="file" id="chooseFile" multiple="" name="chooseFile" accept="image/*" onchange="loadFile(this)">
+        
+      </form>
+
+      <div class="service__file">
+        <div class="service__file-Input">
+          <p>FILE NAME: </p>
+          <p id="fileName"></p>
+        </div>
+        <div class="service__btn">
+          <div class="submitButton" id="submitButton">SUBMIT</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="service__upload">
+    <div class="image-upload" id="image-upload">
+    </div>
+    <div class="image-show" id="image-show"></div>
+  </div>
 
 </body>
 
