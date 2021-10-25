@@ -99,7 +99,7 @@ p {
 
 /* Navbar */
 #navbar {
-  position: relative;
+  position: fixed;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -151,7 +151,7 @@ p {
 /* Home */
 #home {
   padding: 40px;
-  padding-top: 120px;
+  padding-top: 300px;
   text-align: center;
   background-image: url("imgs/home__background.png");
   background-repeat: no-repeat;
@@ -183,3 +183,16 @@ p {
 .home__contact:hover {
   background-color: var(--color-light-grey);
 }
+
+/* Section common */
+.section {
+  padding: 70px;
+  text-align: center;
+  margin: auto;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: auto;
+}
+
