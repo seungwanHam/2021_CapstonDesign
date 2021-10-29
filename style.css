@@ -198,6 +198,8 @@ p {
 
 /* Service */
 #service {
+  margin-top: 50px;
+  width: 60%;
   outline: 2px dashed #92b0b3;
   outline-offset: -10px;
   display: flex;
@@ -270,4 +272,31 @@ label {
 
 .img {
   position: absolute;
+}
+
+/* Team */
+#team {
+}
+
+.team__description {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.team__row {
+  padding-top: 50px 25px;
+  padding-bottom: 25px;
+}
+
+.member__container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+}
+
+.team__member__description {
+  padding-top: 25px;
+  padding-bottom: 50px;
 }
