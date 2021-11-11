@@ -104,10 +104,11 @@ p {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color: #212529;
+  background-color: transparent;
   color: var(--color-white);
   align-items: center;
   padding: 0px;
+  transition: var(--animation-duration) ease-in-out;
   z-index: 1;
 }
 
@@ -118,7 +119,12 @@ p {
 .navbar__logo > img {
   width: 300px;
   height: 60px;
-  object-fit: cover;
+  object-fit:cover;
+}
+
+#navbar.navbar--dark {
+  background-color: #212529;
+  padding: 8px;
 }
 
 .navbar__menu {
@@ -144,7 +150,7 @@ p {
   top: 24px;
   right: 32px;
   font-size: 24px;
-  color: white;
+  color: var(--color-white);
   display: none;
 }
 
@@ -153,6 +159,7 @@ p {
   padding: 40px;
   padding-top: 300px;
   text-align: center;
+  /* background-image: url("imgs/home__background.png"); */
   background-image: url("imgs/home__background.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -196,23 +203,22 @@ p {
   margin: auto;
 }
 
-<<<<<<< HEAD
 /* Service */
 #service {
   margin-top: 50px;
-  width: 60%;
+  width: 800px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
   outline: 2px dashed #92b0b3;
   outline-offset: -10px;
-  display: flex;
-  height: 100%;
-  flex-direction: column;
+  background-color: var(--color-white);
 }
 
-.section__container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+#service:hover {
+  outline: 5px dashed #92b0b3;
+  background-color: gray;
+  transition: var(--animation-duration);
 }
 
 .service__content {
@@ -230,6 +236,7 @@ label {
 }
 
 .service__file {
+  margin-top: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -239,7 +246,7 @@ label {
   display: flex;
   align-items: center;
   border-bottom: solid 2px black;
-  width: 100%;
+  width: 500px;
   height: 30px;
 }
 
@@ -248,7 +255,7 @@ label {
 }
 
 .service__btn {
-  width: 30%;
+  width: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -275,8 +282,36 @@ label {
   position: absolute;
 }
 
+/* About */
+#about {
+  margin-top: 50px;
+  width: 1200px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  background-color: var(--color-white);
+}
+
+.about__RD-background {
+  margin-top: 0px;
+}
+
+.about__RD-goal {
+  margin-top: 80px;
+}
+
 /* Team */
 #team {
+  margin-top: 50px;
+  width: 1200px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  outline: 2px dashed #92b0b3;
+  outline-offset: -10px;
+  background-color: var(--color-white);
 }
 
 .team__description {
@@ -301,6 +336,101 @@ label {
   padding-top: 25px;
   padding-bottom: 50px;
 }
-=======
-/* About */
->>>>>>> 2e44d8d (.)
+
+.social__btn {
+  color: var(--color-blue);
+  font-size: var(--font-medium);
+  margin: 24px 0;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.social__btn i:hover {
+  transform: scale(1.2);
+  color: var(--color-grey);
+}
+
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  color: var(--color-white);
+  background-color: var(--color-grey);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* For below 768px screen width */
+/* @media screen and (max-width: 768px) {
+  :root {
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+  .navbar__toggle-btn {
+    display: block;
+    top: 20px;
+    right: 16px;
+    font-size: var(--font-medium);
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #212529;;
+  }
+
+  #navbar.navbar--dark {
+    padding: 16px;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
+  }
+
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
+  #service {
+    width: 414px;
+  }
+
+  .service__content {
+    width: 414px;
+  }
+
+  .service__file {
+    width: 300px;
+    justify-content: center;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
+  }
+} */
