@@ -80,51 +80,59 @@ function showImage() {
     document.getElementById('fileName').textContent = null;     //기존 파일 이름 지우기
 }
 
+// const section = document.querySelector('#service');
+const btnUpload = document.querySelector('.btn-upload');
+const inputFile = document.querySelector('input[type="file"]');
+const uploadBox = document.querySelector('#service');
 
-function loadFile(input) {
-    let file = input.files[0];
+// 박스 안에 Drag 들어왔을 때
+uploadBox.addEventListener('dragenter', function(e) {
+  console.log('dragenter');
+});
 
-    let name = document.getElementById('fileName');
-    name.textContent = file.name;
+// 박스 안에 Drag 하고 있을 때
+uploadBox.addEventListener('dragover', function(e) {
+  e.preventDefault();
+  console.log('dragover');
 
-    let newImage = document.createElement("img");
-    newImage.setAttribute("class", 'img');
+  this.style.backgroundColor = "green";
+});
 
-    newImage.src = URL.createObjectURL(file);   
+// 박스 밖으로 Drag가 나갈 때
+uploadBox.addEventListener('dragleave', function(e) {
+  console.log('dragleave');
 
-    newImage.style.width = "70%";
-    newImage.style.height = "70%";
-    newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지 숨기기
-    newImage.style.objectFit = "contain";
+  this.style.backgroundColor = "white";
+})
 
-    let container = document.getElementById('image-show');
-    container.appendChild(newImage);
-};
+// 박스 안에서 Drag를 Drop 했을 때
+uploadBox.addEventListener('drop', function(e) {
+  e.preventDefault();
 
-// let holder = document.querySelector('#service');
-// let state = document.querySelector('.service_upload');
+  console.log('drop');
+  this.style.backgroundColor = 'white';
 
-// if (typeof window.FileReader === 'undefined') {
-//   state.className = 'fail';
-// } else {
-//   state.className = 'success';
-//   state.innerHTML = 'File API & FileReader available';
-// }
- 
-// holder.ondragover = function () { this.className = 'hover'; return false; };
-// holder.ondragend = function () { this.className = ''; return false; };
-// holder.ondrop = function (e) {
-//   this.className = '';
-//   e.preventDefault();
+  console.dir(e.dataTransfer);
 
-//   var file = e.dataTransfer.files[0],
-//       reader = new FileReader();
-//   reader.onload = function (event) {
-//     console.log(event.target);
-//     holder.style.background = 'url(' + event.target.result + ') no-repeat center';
-//   };
-//   console.log(file);
-//   reader.readAsDataURL(file);
+  var data = e.dataTransfer.files[0];
+  console.dir(data);
 
-//   return false;
-// };
+  // let file = input.files[0];
+
+  let name = document.getElementById('fileName');
+  name.textContent = data.name;
+
+  let newImage = document.createElement("img");
+  newImage.setAttribute("class", 'img');
+
+  newImage.src = URL.createObjectURL(data);   
+
+  newImage.style.width = "70%";
+  newImage.style.height = "70%";
+  newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지 숨기기
+  newImage.style.objectFit = "contain";
+
+  let container = document.getElementById('image-show');
+  container.appendChild(newImage);
+  
+});
