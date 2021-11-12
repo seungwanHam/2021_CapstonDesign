@@ -76,7 +76,6 @@ function showImage() {
     newImage.style.visibility = "visible";
     
     document.getElementById('image-upload').style.visibility = 'hidden';
-
     document.getElementById('fileName').textContent = null;     //기존 파일 이름 지우기
 }
 
@@ -136,3 +135,24 @@ uploadBox.addEventListener('drop', function(e) {
   container.appendChild(newImage);
   
 });
+
+// local 에서 파일 input 되었을 때
+function loadFile(input) {
+  let file = input.files[0];
+
+  let name = document.getElementById('fileName');
+  name.textContent = file.name;
+
+  let newImage = document.createElement("img");
+  newImage.setAttribute("class", 'img');
+
+  newImage.src = URL.createObjectURL(file);   
+
+  newImage.style.width = "70%";
+  newImage.style.height = "70%";
+  newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지 숨기기
+  newImage.style.objectFit = "contain";
+
+  let container = document.getElementById('image-show');
+  container.appendChild(newImage);
+};
