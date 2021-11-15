@@ -269,19 +269,32 @@ label {
   cursor: pointer;
 }
 
+.service__upload {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .image-show {
-  z-index: -1;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 280px;
+  height: 250px;
+  margin: 2px;
 }
 
-.img {
+/* .image-show {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-}
+  width: 50%;
+  height: 50%;
+} */
 
 /* About */
 #about {
