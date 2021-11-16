@@ -298,7 +298,7 @@ label {
 
 /* About */
 #about {
-  margin-top: 50px;
+  margin-top: 10px;
   width: 1200px;
   height: 600px;
   display: flex;
@@ -313,7 +313,7 @@ label {
 }
 
 .about__RD-goal {
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 /* Team */
@@ -383,8 +383,8 @@ label {
   pointer-events: auto;
 }
 
-/* For below 768px screen width */
-/* @media screen and (max-width: 768px) {
+/* For below 768px screen width  */
+@media screen and (max-width: 768px) {
   :root {
     --font-large: 30px;
     --font-medium: 18px;
@@ -395,19 +395,25 @@ label {
 
   .navbar__toggle-btn {
     display: block;
-    top: 20px;
-    right: 16px;
+    top: 26px;
+    right: 26px;
+    background: white;
     font-size: var(--font-medium);
   }
 
   #navbar {
+    padding: 0px;
     flex-direction: column;
     align-items: flex-start;
-    background-color: #212529;;
+    background-color: #212529;
   }
 
   #navbar.navbar--dark {
     padding: 16px;
+  }
+
+  .navbar__logo {
+    margin: 0px;
   }
 
   .navbar__menu {
@@ -427,17 +433,38 @@ label {
   }
 
   #service {
-    width: 414px;
+    width: 370px;
   }
 
   .service__content {
-    width: 414px;
+    width: 100%;
+
   }
 
   .service__file {
     width: 300px;
     justify-content: center;
   }
+
+  #about {
+    width: 370px;
+    
+  }
+
+  #team{
+    width: 370px;
+  }
+
+  .member__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team__member {
+    padding-bottom: 20px;
+  }
+
+
 
   .arrow-up {
     width: 50px;
@@ -447,4 +474,4 @@ label {
     right: 16px;
     bottom: 16px;
   }
-} */
+}
