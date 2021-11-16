@@ -58,23 +58,26 @@ arrowUp.addEventListener('click', ()=> {
 });
 
 function scrollIntoView(selector) {
-    const scrollTo = document.querySelector(selector);
-    scrollTo.scrollIntoView({behavior: 'smooth'});
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({behavior: 'smooth'});
+}
+
+function showImage() {
+  let newImage = document.getElementById('image-show').lastElementChild;
+  newImage.style.visibility = "visible";
+  let ellipes_download = document.querySelector('.ellipes_download');
+  let final_download = document.querySelector('.final_download');
+  ellipes_download.style.visibility = "visible";
+  final_download.style.visibility = "visible";
+
+  document.getElementById('image-upload').style.visibility = 'hidden';
+  document.getElementById('fileName').textContent = null; //기존 파일 이름 지우기
 }
 
 
 const submit = document.getElementById('submitButton');
 submit.onclick = showImage;     //Submit 버튼 클릭시 이미지 보여주기
 
-function showImage() {
-    var newImage = document.getElementById('image-show').lastElementChild;
-    newImage.style.visibility = "visible";
-    
-    document.getElementById('image-upload').style.visibility = 'hidden';
-    document.getElementById('fileName').textContent = null;     //기존 파일 이름 지우기
-}
-
-// const section = document.querySelector('#service');
 const btnUpload = document.querySelector('.btn-upload');
 const inputFile = document.querySelector('input[type="file"]');
 const uploadBox = document.querySelector('#service');
@@ -108,7 +111,7 @@ uploadBox.addEventListener('drop', function(e) {
 
   console.dir(e.dataTransfer);
 
-  var data = e.dataTransfer.files[0];
+  let data = e.dataTransfer.files[0];
   console.dir(data);
 
   // let file = input.files[0];
@@ -127,8 +130,7 @@ uploadBox.addEventListener('drop', function(e) {
   newImage.style.objectFit = "contain";
 
   let container = document.getElementById('image-show');
-  container.appendChild(newImage);
-  
+  container.appendChild(newImage);  
 });
 
 // local 에서 파일 input 되었을 때

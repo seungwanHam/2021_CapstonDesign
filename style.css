@@ -275,14 +275,30 @@ label {
   justify-content: center;
 }
 
+/* .image-upload {
+  border: 1px solid black;
+} */
+
 .image-show {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 280px;
-  height: 250px;
+  width: 100px;
+  height: 100px;
   margin: 2px;
+  visibility: hidden;
+}
+
+.ellipes_download {
+  margin-top: 100px;
+}
+
+.ellipes_download,
+.final_download {
+  visibility: hidden;
+  color: lightskyblue;
+  font-size: 30px;
 }
 
 /* .image-show {
@@ -383,8 +399,8 @@ label {
   pointer-events: auto;
 }
 
-/* For below 768px screen width  */
-@media screen and (max-width: 768px) {
+/* 안드로이드, 아이폰 (일반폰) */
+@media all and (max-width: 768px) {
   :root {
     --font-large: 30px;
     --font-medium: 18px;
@@ -475,3 +491,41 @@ label {
     bottom: 16px;
   }
 }
+
+
+
+
+/*
+    갤럭시 탭, 아이패드등 (태블릿)
+*/
+
+@media all and (max-width: 1065px) and (min-width: 801px) {
+  .box_inner { width: 100%; }
+  header .header_area h1 { padding-left:  20px; }
+  .header_cont { float: right; width: 60%; padding-right: 20px; }
+  .header_cont .gnb li a { padding: 26px 25px; }
+  .gnb_depth .submenu_list { width: 100%; padding-left: 52%; }
+  .gnb_depth .submenu_list li a { padding: 20px; }
+
+  #container { padding-bottom: 20px; }
+  .about_area .place_list { box-sizing: border-box; padding: 0 20px; }
+  .appbbs_area .appbbs_box { box-sizing: border-box; padding: 0 20px; }
+  .appbbs_area .appbbs_box .app_line a { font-size: 21px; }
+
+  footer .foot_area { box-sizing: border-box; padding-left: 20px; }
+  footer .foot_area .snslink li { margin-left: 15px; }
+
+  .quick_area .quick_list { display: none; }
+  .to_top { position: fixed; right: 20px; bottom: 112px; text-align: center; background: none; z-index: 100; }
+  .to_top a { display: block; width: 45px; height: 45px; border-left: none; border-bottom: none; background: url(../images/ico_totop_mo.png) no-repeat center; background-size: 45px; }
+
+  /* 회원 가입 */
+  .appForm .app_list li .tit_lbl { width: 21%; }
+  .appForm .app_list li .app_content { width: 79%; }
+  
+  /* 마이 페이지 */
+  .regForm .reg_list li .tit_lbl { width: 21%; }
+  .regForm .reg_list li .reg_content { width: 79%; }
+  
+}
+
