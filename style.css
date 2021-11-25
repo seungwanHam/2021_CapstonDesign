@@ -45,6 +45,7 @@ body {
   margin: 0;
   height: 100%;
   cursor: default;
+  background-color: #111;
 }
 
 a {
@@ -113,12 +114,10 @@ p {
 }
 
 .navbar__logo {
-  margin-left: 80px;
+  display: flex;
 }
 
 .navbar__logo > img {
-  width: 300px;
-  height: 60px;
   object-fit:cover;
 }
 
@@ -128,7 +127,6 @@ p {
 }
 
 .navbar__menu {
-  margin-right: 180px;
   display: flex;
 }
 
@@ -138,6 +136,7 @@ p {
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: var(--size-border-radius);
+  font-size: 18px;
 }
 
 .navbar__menu__item:hover {
@@ -261,55 +260,68 @@ label {
   align-items: center;
   margin-left: 10px;
   background-color: black;
-  color: white;
   border-radius: 30px;
   padding: 10px;
   font-size: 0.8em;
   cursor: pointer;
 }
 
+.submitButton {
+  color: white;
+}
+
 .service__upload {
+  width: 1200px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  opacity: 1;
+  margin: 20px auto;
 }
-
-/* .image-upload {
-  border: 1px solid black;
-} */
 
 .image-show {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
-  margin: 2px;
-  visibility: hidden;
+} 
+
+.image-show img{
+  margin: 10px;
 }
 
-.ellipes_download {
-  margin-top: 100px;
+/* .image-upload {
+  border: 1px solid black;
+} */
+
+.download__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  margin: 20px auto;
+  transition: transform 300ms ease-in;
 }
 
-.ellipes_download,
+/* .ellipes_download, */
 .final_download {
   visibility: hidden;
   color: lightskyblue;
   font-size: 30px;
+  text-align: center;
+  padding: 10px;
 }
 
-/* .image-show {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 50%;
-  height: 50%;
-} */
+.final_download {
+  background-color: rgb(238, 081, 000);
+  color: white;
+  border-radius: var(--size-border-radius);
+}
+
+.download__container:hover {
+  transform: scale(1.1);
+}
 
 /* About */
 #about {

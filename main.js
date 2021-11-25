@@ -65,9 +65,9 @@ function scrollIntoView(selector) {
 function showImage() {
   let newImage = document.getElementById('image-show').lastElementChild;
   newImage.style.visibility = "visible";
-  let ellipes_download = document.querySelector('.ellipes_download');
+  // let ellipes_download = document.querySelector('.ellipes_download');
   let final_download = document.querySelector('.final_download');
-  ellipes_download.style.visibility = "visible";
+  // ellipes_download.style.visibility = "visible";
   final_download.style.visibility = "visible";
 
   document.getElementById('image-upload').style.visibility = 'hidden';
@@ -124,10 +124,10 @@ uploadBox.addEventListener('drop', function(e) {
 
   newImage.src = URL.createObjectURL(data);   
 
-  newImage.style.width = "70%";
-  newImage.style.height = "70%";
+  newImage.style.width = "30px";
+  newImage.style.height = "30px";
   newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지 숨기기
-  newImage.style.objectFit = "contain";
+  // newImage.style.objectFit = "contain";
 
   let container = document.getElementById('image-show');
   container.appendChild(newImage);  
@@ -153,3 +153,4 @@ function loadFile(input) {
   let container = document.getElementById('image-show');
   container.appendChild(newImage);
 };
+
