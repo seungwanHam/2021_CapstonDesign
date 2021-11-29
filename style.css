@@ -1,3 +1,29 @@
+/* 웹 접근성을 위한 skipnavi */
+.skipnavi {
+  position: absolute;
+  left: 0;
+  top: -50;
+  text-indent: -9999px;
+  font-size: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.skipnavi > li > a:focus,
+.skipnavi > li > a:active {
+  position: absolute;
+  left: 0;
+  top: 50px;
+  display: block;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  text-indent: 0;
+  font-size: 12px;
+  font-weight: bold;
+  background: #f2f2f2;
+}
+
 /* Global */
 :root {
   /* Color */
