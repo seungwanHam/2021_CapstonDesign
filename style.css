@@ -466,8 +466,6 @@ label {
     font-size: 25px;
   }
 
-
-
   #navbar {
     padding: 0px;
     flex-direction: column;
@@ -516,6 +514,7 @@ label {
 
   #about {
     width: 95%;
+    height: auto;
     padding: 15px;
   }
 
@@ -599,7 +598,7 @@ label {
 
   #about {
     width: 95%;
-    
+    height: auto;
   }
 
   #team{
