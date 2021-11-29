@@ -123,7 +123,6 @@ p {
 
 #navbar.navbar--dark {
   background-color: #212529;
-  padding: 8px;
 }
 
 .navbar__menu {
@@ -157,7 +156,6 @@ p {
   padding: 40px;
   padding-top: 300px;
   text-align: center;
-  /* background-image: url("imgs/home__background.png"); */
   background-image: url("imgs/home__background.png");
   background-repeat: no-repeat;
   background-position: center center;
@@ -271,7 +269,7 @@ label {
 }
 
 .service__upload {
-  width: 1200px;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -281,13 +279,22 @@ label {
 }
 
 .image-show {
+  width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 } 
 
-.image-show img{
+.image-show .img {
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
+  display: flex;
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height: 280px;
   margin: 10px;
 }
 
@@ -308,13 +315,13 @@ label {
 .final_download {
   visibility: hidden;
   color: lightskyblue;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   padding: 10px;
 }
 
 .final_download {
-  background-color: rgb(238, 081, 000);
+  background-color: lightskyblue;
   color: white;
   border-radius: var(--size-border-radius);
 }
@@ -347,7 +354,6 @@ label {
 #team {
   margin-top: 50px;
   width: 1200px;
-  height: 600px;
   display: flex;
   flex-direction: column;
   outline: 2px dashed #92b0b3;
@@ -410,8 +416,14 @@ label {
   pointer-events: auto;
 }
 
+.copyright {
+  font-size: 15px;
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-white);
+}
+
 /* 안드로이드, 아이폰 (일반폰) */
-@media all and (max-width: 768px) {
+@media all and (max-width: 800px) and (min-width: 300px) {
   :root {
     --font-large: 30px;
     --font-medium: 18px;
@@ -422,21 +434,19 @@ label {
 
   .navbar__toggle-btn {
     display: block;
-    top: 26px;
+    top: 24px;
     right: 26px;
-    background: white;
-    font-size: var(--font-medium);
+    color: var(--color-white);
+    font-size: 25px;
   }
+
+
 
   #navbar {
     padding: 0px;
     flex-direction: column;
     align-items: flex-start;
     background-color: #212529;
-  }
-
-  #navbar.navbar--dark {
-    padding: 16px;
   }
 
   .navbar__logo {
@@ -460,7 +470,95 @@ label {
   }
 
   #service {
-    width: 370px;
+    width: 95%;
+  }
+
+  .service__content {
+    width: 100%;
+
+  }
+
+  .service__file {
+    width: 300px;
+    justify-content: center;
+  }
+
+  .image-show {
+    display: flex;
+    flex-direction: column;
+  } 
+
+  #about {
+    width: 95%;
+    padding: 15px;
+  }
+
+  #team{
+    width: 95%;
+  }
+
+  .member__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .team__member {
+    padding-bottom: 20px;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+
+/*
+    갤럭시 탭, 아이패드등 (태블릿)
+*/
+
+@media all and (max-width: 1065px) and (min-width: 801px) {
+  .navbar__toggle-btn {
+    display: block;
+    top: 26px;
+    right: 26px;
+    color: var(--color-white);
+    font-size: 25px;
+  }
+
+  #navbar {
+    padding: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #212529;
+  }
+
+  .navbar__logo {
+    margin: 0px;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .navbar__menu.open {
+    display: block;
+  }
+
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
+  #service {
+    width: 95%;
   }
 
   .service__content {
@@ -474,24 +572,21 @@ label {
   }
 
   #about {
-    width: 370px;
+    width: 95%;
     
   }
 
   #team{
-    width: 370px;
+    width: 95%;
   }
 
   .member__container {
     display: flex;
-    flex-direction: column;
   }
 
   .team__member {
     padding-bottom: 20px;
   }
-
-
 
   .arrow-up {
     width: 50px;
@@ -501,42 +596,5 @@ label {
     right: 16px;
     bottom: 16px;
   }
-}
-
-
-
-
-/*
-    갤럭시 탭, 아이패드등 (태블릿)
-*/
-
-@media all and (max-width: 1065px) and (min-width: 801px) {
-  .box_inner { width: 100%; }
-  header .header_area h1 { padding-left:  20px; }
-  .header_cont { float: right; width: 60%; padding-right: 20px; }
-  .header_cont .gnb li a { padding: 26px 25px; }
-  .gnb_depth .submenu_list { width: 100%; padding-left: 52%; }
-  .gnb_depth .submenu_list li a { padding: 20px; }
-
-  #container { padding-bottom: 20px; }
-  .about_area .place_list { box-sizing: border-box; padding: 0 20px; }
-  .appbbs_area .appbbs_box { box-sizing: border-box; padding: 0 20px; }
-  .appbbs_area .appbbs_box .app_line a { font-size: 21px; }
-
-  footer .foot_area { box-sizing: border-box; padding-left: 20px; }
-  footer .foot_area .snslink li { margin-left: 15px; }
-
-  .quick_area .quick_list { display: none; }
-  .to_top { position: fixed; right: 20px; bottom: 112px; text-align: center; background: none; z-index: 100; }
-  .to_top a { display: block; width: 45px; height: 45px; border-left: none; border-bottom: none; background: url(../images/ico_totop_mo.png) no-repeat center; background-size: 45px; }
-
-  /* 회원 가입 */
-  .appForm .app_list li .tit_lbl { width: 21%; }
-  .appForm .app_list li .app_content { width: 79%; }
-  
-  /* 마이 페이지 */
-  .regForm .reg_list li .tit_lbl { width: 21%; }
-  .regForm .reg_list li .reg_content { width: 79%; }
-  
 }
 
